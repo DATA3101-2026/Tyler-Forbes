@@ -46,6 +46,6 @@ everyday_flights <- flights %>%
 
 #Exercise 6
 
-# Filter() removes rows from the previous dataset based on whatever criteria is included in the function, so ideally
-# arrange() is used after filter() for high-volume data because it could be easier for the computer.  
-# Ideally filter() is used before arrange because it's usually doing more significant work, but it's not make or break
+print("Filter() removes rows from the previous dataset based on whatever criteria is included in the function, so ideally")
+print("arrange() is used after filter() for high-volume data because it could be easier for the computer.")  
+print("Ideally filter() is used before arrange because it's usually doing more significant work, but it's not make or break")
