@@ -26,3 +26,6 @@ ggplot(bb_long,
 
 example_songs <- bb_long %>%
   filter(track %in% c("Say My Name", "Give Me You", "Jumpin' Jumpin'", "Deep Inside"))
+
+#Today in class, we learned about tidying data, and formatting it in Long and Wide formats, altering column/row numbers to adjust data for different purposes.
+#Tidy data is essential for effective results, proper visualizations, and collaboration.
