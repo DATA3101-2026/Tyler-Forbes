@@ -4,7 +4,7 @@ library(nycflights13)
 
 flights
 
-#Assignment 2 Part 1
+# Assignment 2 Part 1
 
 # Q1
 flights_delay_180 <- filter(flights, dep_delay>=180)
@@ -35,9 +35,9 @@ distinct_origins <- flights %>%
 
 # 224 unique pairs of origins and destinations exist from 2013 New York City flights
 
-##########################################################
 
 #Assignment 2 Part 2
+
 
 #Exercise 4
 everyday_flights <- flights %>%
@@ -49,3 +49,26 @@ everyday_flights <- flights %>%
 print("Filter() removes rows from the previous dataset based on whatever criteria is included in the function, so ideally")
 print("arrange() is used after filter() for high-volume data because it could be easier for the computer.")  
 print("Ideally filter() is used before arrange because it's usually doing more significant work, but it's not make or break")
+
+
+
+#Testing Out Joins
+
+flights2 <- flights %>%
+  mutate(id = row_number(), .before = 1) #Adding a row indicating ID which is just row number
+flights2
+
+flights2 <- flights %>%
+  select(year, time_hour, origin, dest, tailnum, carrier) #isolating 6 columns
+flights2
+
+flights2 %>%
+  left_join(planes, join_by(tailnum))
+
+flights3 <- flights2 %>%
+  full_join(planes)
+flights3
+
+flights3 <- flights2 %>%
+  full_join(planes, join_by(tailnum))
+flights3
