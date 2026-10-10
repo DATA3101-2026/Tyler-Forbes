@@ -1,0 +1,17 @@
+---
+title: "assignment_5_tidy"
+format: gfm
+editor: visual
+---
+
+## Styler Reflection
+
+Tyler Forbes - Oct 9 2026
+
+I didn't notice any significant changes that styler made to my file, so I did some research to ensure that it was okay that nothing happened. I learned about what styler is meant to do; not change code or what it does, but change how it is presented and organized. So hopefully I'm good enough at organizing that styler tried and failed to make noticeable changes to my work.
+
+I really appreciate the smooth pacing of live r coding and the prompting us to figure out what a function does ourselves. The only improvement I would make would maybe be describing the significance of github use and what exactly is happening for each command we put in. I researched and used new commands (and my amazing mother's help, she's a tech writer lead) to fix a merge conflict today, but it's still confusing a bit on how everything happened and why things happen in github.
+
+As I try to start doing more independent data analysis project, I see more how github is important in my potential work field and in proper data and research presentation. Some applications to real world situations or resources for students who want to work on github apart from class would be helpful. I really like these assignments that aren't high pressure and just push me to learn and figure things out on my own.
+
+I'm a big fan of this class and how it has helped me in my development so far!
