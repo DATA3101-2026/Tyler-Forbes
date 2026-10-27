@@ -4,27 +4,26 @@ library(httr2)
 library(jsonlite)
 library(purrr)
 library(dplyr)
-
-#setting link value
-link <- "https://en.wikipedia.org/wiki/List_of_counties_of_Nova_Scotia"
-page <- read_html(link)
-
-#Bringing table in from website - county info into variable nsC
-nsC <- data.frame(page %>%
-       html_element("table.wikitable.sortable") %>%
-       html_table())
-
+library(tidytuesdayR)
 library(knitr)
 
-kable(nsC, caption = "Table scraped from Wikipedia for class, showing a list of the counties in Nova Scotia, Canada.")
+#loading in data from the tidytuesdayR repository on github
+tuesdata <- tidytuesdayR::tt_load('2026-03-31')
 
-names(nsC)[names(nsC) == 'Population.2021..7.'] <- 'Population_2021' #cleaning up row names
-names(nsC)[names(nsC) == 'Population.2016..7.'] <- 'Population_2016'
+ocean_temperature <- tuesdata$ocean_temperature
+ocean_temperature_deployments <- tuesdata$ocean_temperature_deployments
 
-nsC$Population_2021 <- gsub(",","", nsC$Population_2021) #replace the "," with " ".
-nsC$Population_2021 <- as.numeric(as.character(nsC$Population_2021))
+ocean_temp <- cross_join(ocean_temperature, ocean_temperature_deployments, copy = FALSE) %>%
+  filter(date >= start_date, date <= end_date)
 
-max(nsC$Population_2021) #this is the total counties pop. because we brought in that row as well
-# Two ways to exclude the total row in the range
-max(nsC$Population_2021[1:18])
-max(nsC$Population_2021[-19])
+library(ggplot2) #visualization time!
+
+ggplot(ocean_temp) +
+  geom_area(mapping=aes(mean_temperature_degree_c, date, colour = deployment_id)) #rubbish plot
+
+ggplot(ocean_temp) +
+  geom_area(mapping=aes(date, mean_temperature_degree_c, colour = deployment_id))
+
+#smoother colours
+ggplot(ocean_temp) +
+  geom_area(mapping=aes(date, mean_temperature_degree_c, colour = deployment_id, fill = deployment_id))
