@@ -1,4 +1,4 @@
-library(tidyverse) # Add comments about any of the new packages you may not recognize
+library(tidyverse) 
 library(rvest)
 library(httr2)
 library(jsonlite)
@@ -99,4 +99,19 @@ weatherJson <- toJSON(weather)
 
 write(weatherJson, "weather-test.json")
 
+library(rinat)
 
+monarchs <- get_inat_obs(query = "Monarch Butterfly", year = 2026, month = 8)
+
+#which taxa were returned?
+unique(monarchs$scientific_name)
+
+##search by bounds
+bounds <- c(45.44, -64.7, 46, -64.25)
+heron <- get_inat_obs(query = "Great Blue Heron", bounds = bounds)
+plot(heron$longitude, heron$latitude)
+
+#Saving species data
+
+specJSON <- toJSON(species)
+write(specJSON, "species_test.json")
