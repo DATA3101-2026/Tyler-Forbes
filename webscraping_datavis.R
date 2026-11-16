@@ -5,6 +5,8 @@ library(jsonlite)
 library(purrr)
 library(dplyr)
 
+#created webscraping branch added for assignment 7!
+
 #setting link value
 link <- "https://en.wikipedia.org/wiki/List_of_counties_of_Nova_Scotia"
 page <- read_html(link)
