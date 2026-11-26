@@ -1,0 +1,27 @@
+# Assignment 8
+
+## Part 1: Heron Sightings
+
+![Heron sightings map](BaseRHeronPlot.png)
+
+The addition of the map highlighted the coastline for further understanding of where exactly the observations were happening, but in turn it covered up the other points on the land. I was unable to figure out how to fix that in a quick manner. The GGplot's biggest contribution was making the dots a lot more easy to see with a solid blue instead of a black outline circle for each observation.
+
+## Part 2: iNaturalist Observations in 2026
+
+![Daily observations](DailyObservations2026.png)
+
+The earliest observation date was April 25th, likely because an inaturalist sighting won't happen everyday in sackville and also the many cold cold months of winter might have helped.
+
+## Part 3: Busy Observation Period
+
+The busiest range was from September 25 to September 30th this year. Basic explanations could be new students arriving in the fall and nice weather before it started to get colder. After some online searching, I also found an iNaturalist event called BIOL-1001 BIOBLITZ (Fall 2026). Students from this intro biology class collect and contribute iNaturalist observations in mid to late september. The overview of the project claims over 2,000 observations from Sep 15 to Sep 30.
+
+Source: [iNaturalist](https://www.inaturalist.org/projects/biol-1001-bioblitz-fall-2026)
+
+## Part 4: Heron Sightings and Weather
+
+![Three-panel heron figure](HeronThreePiece.png)
+
+I decided on faceted plots to display temperature and precipitation separately, because they're measured in different units.
+I can see that the temperature dropped with the Heron sightings, but technically the Heron sightings peak observations shared temperatures with times in the summer where none would be observed at all.
+So perchance! iNaturalist observations don't work best for hard tracking the activity of every Great Blue Heron in waterfowl.
